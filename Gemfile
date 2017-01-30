@@ -30,3 +30,4 @@ group :development do
   gem 'pry', '~> 0.10.4'
 end
 
+gem 'rails_12factor', group: :production
