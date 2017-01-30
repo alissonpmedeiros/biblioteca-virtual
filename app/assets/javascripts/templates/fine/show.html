@@ -1,0 +1,26 @@
+<div class="col-md-8 col-md-offset-2" ng-show="user.admin">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center"><h1 class="h1 text-center">Criado em {{fine.created_at | date:'dd/MM/yyyy - HH:mm:ss'}}</h1></h1>
+        </div>
+        <div class="panel-body">
+            <h3 class="h3">Valor: <i>{{fine.value | currency}}</i></h3>
+            <hr>
+            <h3 class="h3">Admnistrador: <i>{{adminFind.email}}</i></h3>
+            <hr>
+            <h3 class="h3">Usuário: <i>{{userFind.email}}</i></h3>
+            <hr>
+            <h3 class="h3">Livro: <i>{{bookFind.title}}</i></h3>
+        </div>
+        <br>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-md-3">
+                    <button ng-click="back()" class="col-md-9 btn btn-lg btn-default">Voltar</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

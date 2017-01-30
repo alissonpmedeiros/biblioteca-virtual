@@ -1,0 +1,50 @@
+<section ng-show="user.id && !user.address_registrable">
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    {{error}}
+                    <div class="form-wrap">
+                        <h1>Endereço</h1>
+                        <form role="form" id="login-form" autocomplete="off" >
+                            <div class="form-group" ng-init="loadStates()">
+                                <label for="email" class="sr-only">Estado</label>
+                                <select  class="form-control" ng-model="address.state_id" ng-options="state.id as state.name for state in states | orderBy:'name'">
+                                    <option value="">Por favor, selecione um Estado</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Cidade</label>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Cidade" ng-model="address.city" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Rua</label>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Rua" ng-model="address.street" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Código </label>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Código Postal" ng-model="address.zipcode" required="required">
+                            </div>
+                            <button class="btn btn-custom btn-lg btn-block" ng-click="registerAddress()">
+                                Registrar
+                            </button>
+                        </form>
+                        <hr>
+                    </div>
+                </div> <!-- /.col-xs-12 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Alisson © - 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+
+

@@ -1,0 +1,24 @@
+<section class="search-results" ng-show="user.admin">
+    <header>
+        <h2 class="h2">Contas</h2>
+    </header>
+    <ol class="list-group" ng-init="loadFines()">
+        <li class="list-group-item clearfix" ng-repeat="fine in fines | orderBy:'-created_at'">
+            <h3 class="pull-right"><small class="text-uppercase">Registrada em </small>{{ fine.created_at | date }}</h3>
+            <h2 class="h3">
+                <p>Usuário: {{fine.loan.user.email}}</p>
+                <p>Valor: {{fine.value | currency}}</p>
+            </h2>
+            <div class="pull-right">
+                <buton class="btn btn-small btn-info"
+                       ng-click="openPdf(fine)">
+                    Imprimir
+                </buton>
+                <buton class="btn btn-small btn-primary"
+                       ng-click="showFine(fine.id)">
+                    Ver Detalhes...
+                </buton>
+            </div>
+        </li>
+    </ol>
+</section>

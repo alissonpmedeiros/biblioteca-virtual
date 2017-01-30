@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1 class="text-inverse">Biblioteca Uepb</h1>
+        <p class="text-inverse">Gerenciamento Virtual da Bliblioteca da UEPB.</p>
+        <br>
+        <br>
+       <div ng-show="!user.id">
+       	  <a class="btn btn-lg btn-primary" href="#/user_login">Entrar</a>
+          <a class="btn btn-lg btn-info" href="#/user_register">Cadastrar</a>
+       </div>
+       <div ng-show="user.id">
+       	<a class="btn btn-lg btn-primary" href="" ng-click="signOut()">Sair do Sistema</a>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

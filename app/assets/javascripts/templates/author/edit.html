@@ -1,0 +1,41 @@
+<div class="col-md-8 col-md-offset-2" ng-show="user.admin">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center"><h1 class="h1 text-center">Editar Autor</h1></h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form" id="formNew" name="AuthorForm" novalidate ng-submit="updateAuthor()">
+                <div ng-include src="'author/form.html'"></div>
+            </form>
+        </div>
+        <div class="panel-footer">
+            <div ng-click="addBook()">
+                <button class="btn btn-info btn-lg">Adicionar Livro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-8 col-md-offset-2" ng-show="showPanel">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center"><h2 class="h2 text-center">Adicionar Livro</h2></h3>
+        </div>
+        <div class="panel-body">
+            <form name="bookForm" >
+                <div class="col-md-8 col-md-offset-2">
+                    <select  class="form-control" ng-model="book" ng-options="book.title + ' (' + ('Isbn:' + book.isbn ) +')' for book in books | orderBy:'title'">
+                        <option value="">Por favor, selecione um livro</option>
+                    </select>
+                    <br>
+                </div>
+
+                <div class="col-md-8 col-md-offset-2">
+                    <button ng-click="pushBook()" class="col-md-12 btn btn-warning">
+                        Adicionar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

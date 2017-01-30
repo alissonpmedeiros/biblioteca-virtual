@@ -1,0 +1,25 @@
+<div class="col-md-8 col-md-offset-2" ng-show="user.admin">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title"><h1 class="h1 text-center">Nova Categoria</h1></h1>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form" id="formNew" name="CategoryForm" novalidate >
+                <div class="form-group">
+                    <label class="col-md-1 control-label col-md-offset-1">Nome</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="category" ng-model="category.category_name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div ng-click="back()" class="col-md-2 col-md-offset-2">
+                        <button class="btn btn-default btn-lg">Voltar</button>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button ng-click="saveCategory()" class="btn btn-primary btn-lg">Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

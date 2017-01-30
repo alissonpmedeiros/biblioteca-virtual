@@ -1,0 +1,22 @@
+<div class="col-md-8 col-md-offset-2" ng-show="!user.admin && user.id">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title"><h1 class="h1 text-center">Created : {{userLoaned.created_at | date:'dd/MM/yyyy - HH:mm:ss'}}</h1></h1>
+        </div>
+        <div class="panel-body">
+            <div>
+                <p><h2 class="h2">Livro: {{userLoaned.book.title}}</h2></p>
+                <p><h2 class="h2">Usuário: {{userLoaned.user.email}}</h2></p>
+                <p><h2 class="h2">Admin: {{userLoaned.admin.email}}</h2></p>
+                <p><h2 class="h2">Emprestado: {{userLoaned.loaned}}</h2></p>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-default btn-lg" ng-click="backUserLoans()">
+                Voltar
+            </button>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,30 @@
+<section ng-show = "!user.admin && user.id">
+    <header>
+        <h1 class="h3">Empréstimos</h1>
+    </header>
+    <ol class="list-group" ng-init="loadUserLoans()">
+        <li class="list-group-item clearfix" ng-repeat="loan in userLoans | filter: {user_id: user.id}  | orderBy: '-created_at'">
+            <h3 class="pull-right"><small class="text-uppercase">Emprestado em </small>{{ loan.created_at | date }}</h3>
+            <h2 class="h3">
+                {{ loan.book.title}}
+            </h2>
+            <div class="pull-right">
+                <buton class="btn btn-small btn-primary"
+                       ng-click="showUserLoaned(loan)">
+                    Ver Detalhes...
+                </buton>
+            </div>
+        </li>
+    </ol>
+</section>
+
+
+
+
+
+
+
+
+
+
+

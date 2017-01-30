@@ -1,0 +1,26 @@
+<div class="col-md-8 col-md-offset-2" ng-show="user.id">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center"><h1 class="h1 text-center">{{book.title}}</h1></h1>
+        </div>
+        <div class="panel-body">
+            <h3 class="h3">Isnb: <i>{{book.isbn}}</i></h3>
+            <h3 class="h3">Quantidade: <i>{{book.quantity}}</i></h3>
+            <h3 class="h3">Categoria: <i>{{book.category.category_name}}</i></h3>
+            <div ng-repeat="author in book.authors">
+                <h3 class="h3">Autor: <i>{{author.first_name}}</i></h3>
+            </div>
+        </div>
+        <br>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-md-3">
+                    <button ng-click="back()" class="col-md-9 btn btn-lg btn-default">Voltar</button>
+                </div>
+                <button ng-show="user.admin" ng-click="editBook(book.id)" class="btn btn-lg btn-warning">Editar Livro</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>

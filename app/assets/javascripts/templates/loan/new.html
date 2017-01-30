@@ -1,0 +1,38 @@
+<div class="col-md-8 col-md-offset-2" ng-show="user.admin">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title"><h1 class="h1 text-center">Novo Empréstimo</h1></h1>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form" id="formNew" name="LoanForm" novalidate>
+                <div class="form-group" ng-init="loadUsers()" >
+                    <label class="col-md-1 control-label col-md-offset-1"></label>
+                    <div class="col-md-8">
+                        <select name="user" required="required" class="form-control" ng-model="loan.user_id" ng-options="user.id as user.email for user in users | filter: {admin: false} | orderBy:'email'">
+                            <option value="">Por favor, selecione um usuário</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" ng-init="loadBooks()" >
+                    <label class="col-md-1 control-label col-md-offset-1"></label>
+                    <div class="col-md-8">
+                        <select required="required" name="book"  class="form-control" ng-model="loan.book" ng-options="book as book.title for book in books | orderBy:'title'">
+                            <option value="">Por favor, selecione um livro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1 control-label col-md-offset-1"></label>
+                    <dov class="col-md-8">
+                        <button ng-disabled="LoanForm.$invalid"
+                                ng-click="saveLoan()" class="col-md-12 btn btn-primary btn-lg">
+                            Salvar
+                        </button>
+                    </dov>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+

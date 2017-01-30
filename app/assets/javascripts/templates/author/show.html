@@ -1,0 +1,65 @@
+<div class="col-md-8 col-md-offset-2" ng-show="user.id">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">
+                <h1 class="h1 text-center">{{author.first_name}} {{author.last_name}}</h1>
+            </h1>
+        </div>
+        <div class="panel-body">
+            <h3 class="h3">Biografia: <i>{{author.bio}}</i></h3>
+            <hr>
+        </div>
+        <br>
+        <div class="panel-footer">
+           <div class="row">
+               <button ng-click="authorsBooks()"
+                       class="pull-right btn btn-lg btn-info">
+                   Livro do Autor
+               </button>
+               <div class="col-md-3">
+                   <button ng-click="back()" class="col-md-10 btn btn-lg btn-default">Voltar</button>
+               </div>
+               <button ng-show="user.admin" ng-click="editAuthor(author.id)"
+                       class="btn btn-lg btn-warning">
+                   Editar Autor
+               </button>
+
+           </div>
+           </div>
+    </div>
+</div>
+
+<div class="col-md-8 col-md-offset-2" ng-show="showPanelAuthor && author.books.length > 0">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">
+                <h2 class="h2 text-center"> Livros de {{author.first_name}}'
+                </h2>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form name="booksForm" >
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="h3">Titulo</th>
+                            <th class="h3">Isbn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="book in author.books">
+                            <td class="h4">{{book.title}}</td>
+                            <td class="h4">{{book.isbn}}</td>
+                            <td ng-show="user.admin">
+                                <button ng-click="deleteAuthorBook(book)"
+                                        class="col-md-8 btn btn-sm btn-danger">
+                                    Excluir
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

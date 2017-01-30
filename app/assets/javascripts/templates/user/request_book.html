@@ -1,0 +1,30 @@
+<div class="col-md-8 col-md-offset-2" ng-show="user.id">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title"><h1 class="h1 text-center">New Request Book</h1></h1>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form" id="formNew" name="LoanForm" novalidate>
+                <div class="form-group" ng-init="loadBooks()" >
+                    <label class="col-md-1 control-label col-md-offset-1"></label>
+                    <div class="col-md-8">
+                        <select name="user" required="required" class="form-control" ng-model="request_book.book_id" ng-options="book.id as book.title for book in booksForRequest | orderBy:'title'">
+                            <option value="">Por favor, Selecione um Livro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1 control-label col-md-offset-1"></label>
+                    <dov class="col-md-8">
+                        <button ng-disabled="LoanForm.$invalid"
+                                ng-click="saveRequestBook()" class="col-md-12 btn btn-primary btn-lg">
+                            Save Request
+                        </button>
+                    </dov>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+

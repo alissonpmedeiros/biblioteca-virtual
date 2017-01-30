@@ -1,0 +1,52 @@
+<div class="col-md-8 col-md-offset-2" ng-show="user.admin">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title"><h1 class="h1 text-center">Receber Empréstimo</h1></h1>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form" id="receiveFormNew" name="receiveLoanForm" novalidate>
+                <div class="form-group" ng-init="loadUsers()" >
+                    <label class="col-md-1 control-label col-md-offset-1"></label>
+                    <div class="col-md-8">
+                        <select name="user" required="required" class="form-control" ng-model="loan.user" ng-options="user as user.email for user in users | filter: {admin: false} | orderBy:'email'">
+                            <option value="">Por favor, selecione um usuário</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" ng-show="loan.user">
+                    <label class="col-md-1 control-label col-md-offset-1"></label>
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><h4 class="h4 text-center">Empréstimos Pendentes</h4></h4>
+                            </div>
+                            <div class="panel-body" ng-repeat="loan in loan.user.loans | filter: {loaned: true}">
+                                <div>
+                                    <div class="pull-right">
+                                        <button class="btn btn-info" ng-click="showLoan(loan.id)">
+                                            Detalhes
+                                        </button>
+                                        <button class="btn btn-danger" ng-click="deleteLoan(loan.id)">
+                                            Pagar
+                                        </button>
+                                    </div>
+                                    <p>{{loan.book.title}}</p>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1 control-label col-md-offset-1"></label>
+                    <div class="col-md-8">
+                        <button ng-click="backIndex()" class="col-md-12 btn btn-default btn-lg">
+                            Voltar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,16 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: alisson
+  password: kanibaiz
+
+development:
+  <<: *default
+  database: LibraryRoRAngular_development
+
+
+test:
+  <<: *default
+  database: LibraryRoRAngular_test

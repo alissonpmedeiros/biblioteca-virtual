@@ -1,0 +1,94 @@
+<section class="author" ng-show="user.id">
+    <header>
+        <div class="clearfix">
+            <div class="pull-right" ng-show="user.admin">
+                <button class="btn btn-lg btn-primary"  ng-click="newAuthor()">
+                    Novo Autor
+                </button>
+            </div>
+            <h2 class="h2">Buscar Autores</h2>
+        </div>
+    </header>
+    <section class="author-search-form">
+        <form>
+            <label for="keywords" class="sr-only">Keywords</label>
+            <input type="text"
+                   name="keywords"
+                   class="form-control input-lg"
+                   placeholder="Primeiro nome do autor"
+                   ng-change="search(keywords)"
+                   ng-model="keywords">
+        </form>
+    </section>
+
+    <section class="search-results" ng-show = "authors.length > 0">
+        <header>
+            <h1 class="h3">Resultados</h1>
+        </header>
+        <ol class="list-group">
+            <li class="list-group-item clearfix" ng-repeat="author in authors">
+                <h3 class="pull-right"><small class="text-uppercase">Cadastrado em </small>{{ author.created_at | date }}</h3>
+                <h2 class="h3">
+                    {{ author.first_name }} {{ author.last_name }}
+                </h2>
+                <div class="pull-right" ng-show="user.id">
+                    <buton class="btn btn-small btn-primary" ng-click="showAuthor(author.id)">
+                        Ver detalhes...
+                    </buton>
+                </div>
+            </li>
+        </ol>
+    </section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<table class="table table-striped" ng-show="users.length > 0">
+    <thead>
+    <tr>
+        <th class="h3">First Name</th>
+        <th class="h3">Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="author in users | orderBy: 'first_name'">
+        <td class="h4">{{author.first_name}}</td>
+        <td class="h4">{{author.last_name}}</td>
+        <td><button ng-click="showAuthor(author.id)" class="btn btn-info btn-sm">
+            Show Author
+        </button>
+        </td>
+        <td>
+            <button ng-click="editAuthor(author.id)" class="btn btn-warning btn-sm">
+                Edit Author
+            </button>
+        </td>
+        <td>
+            <button ng-click="deleteAuthor(author.id)" class="btn btn-danger btn-sm">
+                Delete Author
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<button ng-click="newAuthor()" class="btn btn-primary btn-lg">
+    New Author
+</button>
+
+-->

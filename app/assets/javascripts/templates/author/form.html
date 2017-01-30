@@ -1,0 +1,31 @@
+<div class="form-group">
+    <label class="col-md-2 control-label col-md-offset-0">Nome</label>
+    <div class="col-md-8">
+        <input type="text" class="form-control" name="first_name" ng-model="$parent.author.first_name">
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-md-2 control-label col-md-offset-0">Sobrenome</label>
+    <div class="col-md-8">
+        <input type="text" class="form-control" name="las_name" ng-model="$parent.author.last_name">
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-md-2 control-label col-md-offset-0">Biografia</label>
+    <div class="col-md-8">
+        <textarea class="form-control" name="bio" ng-model="$parent.author.bio"> </textarea>
+
+    </div>
+</div>
+
+<div class="form-group">
+    <div ng-click="back()" class="col-md-2 col-md-offset-2">
+        <button class="btn btn-default btn-lg">Voltar</button>
+    </div>
+    <div class="col-md-6 text-right">
+        <button ng-click="$parent.submitted=true" class="btn btn-primary btn-lg">Salvar</button>
+    </div>
+</div>
+
